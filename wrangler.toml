@@ -1,6 +1,7 @@
 name = "accounting-worker"
 main = "backend/src/index.js"
 compatibility_date = "2023-12-01"
+pages_build_output_dir = "frontend"
 
 # D1 資料庫配置
 [[d1_databases]]
