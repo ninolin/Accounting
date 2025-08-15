@@ -1,0 +1,14 @@
+name = "accounting-worker"
+main = "backend/src/index.js"
+compatibility_date = "2023-12-01"
+
+# D1 資料庫配置
+[[d1_databases]]
+binding = "DB"
+database_name = "accounting-db"
+database_id = "6b824f5e-e6df-4bde-9525-c5a35f84bfbb"
+migrations_dir = "schema"
+
+# 環境變數 (如需要)
+[vars]
+# ENVIRONMENT = "production"

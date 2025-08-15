@@ -1,0 +1,17 @@
+{
+  "name": "cloudflare-fullstack-app",
+  "version": "1.0.0",
+  "description": "Full-stack application with Cloudflare Pages, Workers, and D1",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "npm run deploy:worker && npm run deploy:pages",
+    "deploy:worker": "wrangler deploy",
+    "deploy:pages": "wrangler pages deploy frontend",
+    "db:create": "wrangler d1 create accounting-db",
+    "db:migrate": "wrangler d1 migrations apply accounting-db",
+    "db:console": "wrangler d1 console accounting-db"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

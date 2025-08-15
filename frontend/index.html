@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會計系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>會計系統</h1>
+        
+        <div class="section">
+            <h2>新增交易</h2>
+            <form id="transactionForm">
+                <input type="text" id="description" placeholder="描述" required>
+                <input type="number" id="amount" placeholder="金額" step="0.01" required>
+                <select id="type" required>
+                    <option value="">選擇類型</option>
+                    <option value="income">收入</option>
+                    <option value="expense">支出</option>
+                </select>
+                <button type="submit">新增</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>交易記錄</h2>
+            <div id="transactions"></div>
+        </div>
+
+        <div class="section">
+            <h2>統計</h2>
+            <div id="summary"></div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
