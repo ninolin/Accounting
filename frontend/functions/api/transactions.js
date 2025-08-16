@@ -1,12 +1,24 @@
 export async function onRequestGet({ env }) {
-    const stmt = env.DB.prepare('SELECT * FROM transactions ORDER BY created_at DESC');
-    const { results } = await stmt.all();
+    console.log('GET /api/transactions called');
     
-    return new Response(JSON.stringify(results), {
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    });
+    try {
+        const stmt = env.DB.prepare('SELECT * FROM transactions ORDER BY created_at DESC');
+        const { results } = await stmt.all();
+        
+        return new Response(JSON.stringify(results), {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+    } catch (error) {
+        console.error('Database error:', error);
+        return new Response(JSON.stringify({ error: 'Database error', details: error.message }), {
+            status: 500,
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+    }
 }
 
 export async function onRequestPost({ request, env }) {
