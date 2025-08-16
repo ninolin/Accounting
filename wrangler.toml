@@ -1,4 +1,4 @@
-name = "accounting-worker"
+name = "accounting"
 compatibility_date = "2023-12-01"
 pages_build_output_dir = "frontend"
 
